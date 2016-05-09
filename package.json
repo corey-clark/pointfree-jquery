@@ -4,7 +4,7 @@
   "description": "Curried a few common jQuery methods to allow them to be written in a point free fashion.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/index.test.js -w"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,9 @@
   "homepage": "https://github.com/corey-clark/pointfree-jquery#readme",
   "dependencies": {
     "ramda": "0.21.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "2.4.5"
   }
 }
