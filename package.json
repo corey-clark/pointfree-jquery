@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/corey-clark/pointfree-jquery/issues"
   },
-  "homepage": "https://github.com/corey-clark/pointfree-jquery#readme"
+  "homepage": "https://github.com/corey-clark/pointfree-jquery#readme",
+  "dependencies": {
+    "ramda": "0.21.0"
+  }
 }
