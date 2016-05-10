@@ -1,10 +1,11 @@
 {
   "name": "pointfree-jquery",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Curried a few common jQuery methods to allow them to be written in a point free fashion.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha src/index.test.js -w"
+    "test": "mocha src/index.test.js -w",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,12 @@
     "url": "https://github.com/corey-clark/pointfree-jquery/issues"
   },
   "homepage": "https://github.com/corey-clark/pointfree-jquery#readme",
-  "dependencies": {
-    "ramda": "0.21.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.6.0",
     "chai": "3.5.0",
-    "mocha": "2.4.5"
+    "mocha": "2.4.5",
+    "webpack": "1.13.0"
   }
 }

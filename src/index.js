@@ -1,14 +1,16 @@
-var _ = require('ramda');
+const similarMethods = [ 
+    'hide',
+    'show'
+];
 
-var hide = _.curry(function(cb, elem) { 
-    return elem.hide(cb);            
-});
-
-var show = _.curry(function(cb, elem) { 
-    return elem.show(cb);            
-});
-
-module.exports = { 
-    hide: hide,
-    show: show
+const build = (acc, x) => { 
+    acc[x] = cb => elem => elem[x](cb);
+    return acc;
 };
+
+const api = similarMethods.reduce(build, {});
+
+export const { 
+    hide,
+    show
+} = api;
