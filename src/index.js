@@ -10,7 +10,4 @@ const build = (acc, x) => {
 
 const api = similarMethods.reduce(build, {});
 
-export const { 
-    hide,
-    show
-} = api;
+module.exports = api;
