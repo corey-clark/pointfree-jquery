@@ -8,6 +8,8 @@ const utils = {
 };
     
 const effectsList = [ 
+    'addClass',
+    'css',
     'fadeIn',
     'fadeOut',
     'fadeTo',
