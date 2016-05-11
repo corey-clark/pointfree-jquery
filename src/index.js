@@ -1,13 +1,15 @@
-const similarMethods = [ 
+import $ from 'jquery';
+
+const effectsList = [ 
     'hide',
     'show'
 ];
 
-const build = (acc, x) => { 
+const buildEffects = (acc, x) => { 
     acc[x] = cb => elem => elem[x](cb);
     return acc;
 };
 
-const api = similarMethods.reduce(build, {});
+const effects = effectsList.reduce(buildEffects, {});
 
-module.exports = api;
+module.exports = effects;
