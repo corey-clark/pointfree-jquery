@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 const effectsList = [ 
     'hide',
     'show'
