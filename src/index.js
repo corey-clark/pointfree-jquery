@@ -1,6 +1,13 @@
 const effectsList = [ 
+    'fadeIn',
+    'fadeOut',
+    'fadeTo',
+    'fadeToggle',
     'hide',
-    'show'
+    'show',
+    'slideToggle',
+    'slideUp',
+    'toggle'
 ];
 
 const buildEffects = (acc, x) => { 
