@@ -1,6 +1,28 @@
 'use strict';
 
+var trace = function trace(msg) {
+    return function (x) {
+        console.log(msg, x);
+        return x;
+    };
+};
+
+var utils = {
+    trace: trace
+};
+
 var effectsList = ['fadeIn', 'fadeOut', 'fadeTo', 'fadeToggle', 'hide', 'show', 'slideToggle', 'slideUp', 'toggle'];
+
+var handlersList = ['bind', 'blur', 'change', 'click', 'contextmenu', 'dblclick', 'die', 'focus', 'focusout', 'keydown', 'keypress', 'keyup', 'live', 'load', 'mousedown', 'mouseenter', 'mouseleave', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'on', 'resize', 'scroll', 'select', 'submit', 'unbind', 'unload'];
+
+var buildHandlers = function buildHandlers(acc, x) {
+    acc[x] = function (evt, cb) {
+        return function (elem) {
+            return elem[x](evt, cb);
+        };
+    };
+    return acc;
+};
 
 var buildEffects = function buildEffects(acc, x) {
     acc[x] = function (cb) {
@@ -12,5 +34,9 @@ var buildEffects = function buildEffects(acc, x) {
 };
 
 var effects = effectsList.reduce(buildEffects, {});
+var handlers = handlersList.reduce(buildHandlers, {});
 
-module.exports = effects;
+var api = Object.assign({}, effects, handlers, utils);
+
+console.log(api);
+module.exports = api;
