@@ -1,16 +1,8 @@
 'use strict';
 
-var _ramda = require('ramda');
+var effectsList = ['hide', 'show'];
 
-var _ramda2 = _interopRequireDefault(_ramda);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-console.log(_ramda2.default);
-
-var similarMethods = ['hide', 'show'];
-
-var build = function build(acc, x) {
+var buildEffects = function buildEffects(acc, x) {
     acc[x] = function (cb) {
         return function (elem) {
             return elem[x](cb);
@@ -19,6 +11,6 @@ var build = function build(acc, x) {
     return acc;
 };
 
-var api = similarMethods.reduce(build, {});
+var effects = effectsList.reduce(buildEffects, {});
 
-module.exports = api;
+module.exports = effects;
