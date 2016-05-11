@@ -38,5 +38,4 @@ var handlers = handlersList.reduce(buildHandlers, {});
 
 var api = Object.assign({}, effects, handlers, utils);
 
-console.log(api);
 module.exports = api;
