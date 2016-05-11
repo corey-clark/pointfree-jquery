@@ -1,6 +1,6 @@
 'use strict';
 
-var effectsList = ['hide', 'show'];
+var effectsList = ['fadeIn', 'fadeOut', 'fadeTo', 'fadeToggle', 'hide', 'show', 'slideToggle', 'slideUp', 'toggle'];
 
 var buildEffects = function buildEffects(acc, x) {
     acc[x] = function (cb) {
