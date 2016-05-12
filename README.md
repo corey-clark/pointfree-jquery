@@ -71,4 +71,5 @@ UTILS
 --------
 
 * `compose`
+* `map`
 * `trace`
