@@ -3,6 +3,8 @@ pointfree-jquery
 
 Curried a few common jQuery methods to allow them to be written in a point free fashion.
 
+`npm install --save pointfree-jquery`
+
 ```js
 import { compose, map, hide, show } from 'pointfree-jquery';
 import $ from 'jquery';

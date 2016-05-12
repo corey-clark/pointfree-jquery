@@ -1,6 +1,6 @@
 {
   "name": "pointfree-jquery",
-  "version": "1.8.10",
+  "version": "1.8.11",
   "description": "Curried a few common jQuery methods to allow them to be written in a point free fashion.",
   "main": "dist/index.js",
   "scripts": {
