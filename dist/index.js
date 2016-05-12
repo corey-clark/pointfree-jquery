@@ -21,9 +21,16 @@ var compose = function compose(fn) {
     };
 };
 
+var map = function map(fn) {
+    return function (elem) {
+        return elem.map(fn);
+    };
+};
+
 var utils = {
-    trace: trace,
-    compose: compose
+    compose: compose,
+    map: map,
+    trace: trace
 };
 
 var buildHandlers = function buildHandlers(acc, x) {

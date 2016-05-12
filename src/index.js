@@ -51,9 +51,12 @@ const trace = msg => x => {
 const compose = (fn, ...rest) => 
     rest.length === 0 ? fn : (...args) => fn(compose(...rest)(...args));
 
+const map = fn => elem => elem.map(fn);
+
 const utils = { 
-    trace,
-    compose
+    compose,
+    map,
+    trace
 };
 
 const buildHandlers = (acc, x) => { 
