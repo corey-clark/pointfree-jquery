@@ -1,12 +1,3 @@
-const trace = msg => x => { 
-    console.log(msg, x);
-    return x;
-};
-
-const utils = { 
-    trace
-};
-    
 const effectsList = [ 
     'addClass',
     'css',
@@ -52,6 +43,18 @@ const handlersList = [
     'unload'
 ];
 
+const trace = msg => x => { 
+    console.log(msg, x);
+    return x;
+};
+
+const compose = (fn, ...rest) => 
+    rest.length === 0 ? fn : (...args) => fn(compose(...rest)(...args));
+
+const utils = { 
+    trace,
+    compose
+};
 
 const buildHandlers = (acc, x) => { 
     acc[x] = (evt, cb) => elem => elem[x](evt, cb);
