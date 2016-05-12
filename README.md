@@ -14,7 +14,7 @@ const program = compose(
     IO
 );
 
-programe(_ => $('body')).unsafePerform();
+program(_ => $('body')).unsafePerform();
 
 ```
 
