@@ -4,13 +4,17 @@ pointfree-jquery
 Curried a few common jQuery methods to allow them to be written in a point free fashion.
 
 ```js
-import { compose, hide, show } from 'pointfree-jquery';
+import { compose, map, hide, show } from 'pointfree-jquery';
 import $ from 'jquery';
 import IO from 'fantasy-io';
 
-const program = compose( 
+const blink = map(compose( 
     show('slow'),
-    hide('fast'),
+    hide('fast')
+));
+
+const program = compose( 
+    blink,
     IO
 );
 
