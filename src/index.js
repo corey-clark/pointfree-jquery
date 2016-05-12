@@ -6,6 +6,7 @@ const effectsList = [
     'fadeTo',
     'fadeToggle',
     'hide',
+    'removeClass',
     'show',
     'slideToggle',
     'slideUp',

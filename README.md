@@ -22,6 +22,32 @@ program(_ => $('body')).unsafePerform();
 
 ```
 
+All methods receive their data as the last argument.
+
+```js
+import { addClass, css, on, compose, map } from 'pointfree-jquery';
+import $ from 'jquery';
+import IO from 'fantasy-io';
+
+const logInfo = function(e) { 
+    console.log(this, e);
+};
+
+const handler = compose( 
+    on('click', logInfo),
+    css({ 'background': 'green' }),
+    addClass('example')
+);
+
+const program = compose( 
+    map(handler),
+    IO
+);  
+
+program(_ => $('body')).unsafePerform();
+
+```
+
 EFFECTS
 --------
 
@@ -32,6 +58,7 @@ EFFECTS
 * `fadeTo`
 * `fadeToggle`
 * `hide`
+* `removeclass`
 * `show`
 * `slideToggle`
 * `slideUp`
