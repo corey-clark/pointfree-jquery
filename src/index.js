@@ -1,3 +1,7 @@
+const customList = [ 
+    'animate'
+];
+
 const effectsList = [ 
     'addClass',
     'css',
@@ -52,10 +56,14 @@ const trace = msg => x => {
 const compose = (fn, ...rest) => 
     rest.length === 0 ? fn : (...args) => fn(compose(...rest)(...args));
 
+const curry = (fn, ...args) =>
+    fn.length <= args.length ? f(...args) : (...more) => curry(f, ...args, ...more);
+
 const map = fn => elem => elem.map(fn);
 
 const utils = { 
     compose,
+    curry,
     map,
     trace
 };

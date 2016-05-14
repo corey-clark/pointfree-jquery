@@ -1,5 +1,7 @@
 'use strict';
 
+var customList = ['animate'];
+
 var effectsList = ['addClass', 'css', 'fadeIn', 'fadeOut', 'fadeTo', 'fadeToggle', 'hide', 'removeClass', 'show', 'slideToggle', 'slideUp', 'toggle'];
 
 var handlersList = ['bind', 'blur', 'change', 'click', 'contextmenu', 'dblclick', 'die', 'focus', 'focusout', 'keydown', 'keypress', 'keyup', 'live', 'load', 'mousedown', 'mouseenter', 'mouseleave', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'on', 'resize', 'scroll', 'select', 'submit', 'unbind', 'unload'];
@@ -21,6 +23,20 @@ var compose = function compose(fn) {
     };
 };
 
+var curry = function curry(fn) {
+    for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        args[_key2 - 1] = arguments[_key2];
+    }
+
+    return fn.length <= args.length ? f.apply(undefined, args) : function () {
+        for (var _len3 = arguments.length, more = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+            more[_key3] = arguments[_key3];
+        }
+
+        return curry.apply(undefined, [f].concat(args, more));
+    };
+};
+
 var map = function map(fn) {
     return function (elem) {
         return elem.map(fn);
@@ -29,6 +45,7 @@ var map = function map(fn) {
 
 var utils = {
     compose: compose,
+    curry: curry,
     map: map,
     trace: trace
 };
