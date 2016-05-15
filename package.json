@@ -1,11 +1,11 @@
 {
   "name": "pointfree-jquery",
-  "version": "1.9.12",
+  "version": "1.9.13",
   "description": "Curried a few common jQuery methods to allow them to be written in a point free fashion.",
-  "main": "dist/pointfree-jquery.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha src/index.test.js -w --compilers js:babel-register",
-    "build": "babel --out-file dist/pointfree-jquery.js --ignore *.test.js src"
+    "build": "babel --out-dir dist --ignore *.test.js src"
   },
   "repository": {
     "type": "git",
