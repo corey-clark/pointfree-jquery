@@ -15,12 +15,12 @@ var curry = function curry(fn) {
         args[_key2 - 1] = arguments[_key2];
     }
 
-    return fn.length <= args.length ? f.apply(undefined, args) : function () {
+    return fn.length <= args.length ? fn.apply(undefined, args) : function () {
         for (var _len3 = arguments.length, more = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
             more[_key3] = arguments[_key3];
         }
 
-        return curry.apply(undefined, [f].concat(args, more));
+        return curry.apply(undefined, [fn].concat(args, more));
     };
 };
 
