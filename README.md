@@ -100,5 +100,6 @@ UTILS
 --------
 
 * `compose`
+* `curry`
 * `map`
 * `trace`
