@@ -1,12 +1,5 @@
 'use strict';
 
-var _utils = require('./utils');
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-'use strict';
-
 var effectsList = ['addClass', 'css', 'fadeIn', 'fadeOut', 'fadeTo', 'fadeToggle', 'hide', 'removeClass', 'show', 'slideToggle', 'slideUp', 'toggle'];
 
 var buildEffects = function buildEffects(acc, x) {
@@ -57,13 +50,6 @@ var api = Object.assign({}, _effects2.default, _handlers2.default, _utils2.defau
 module.exports = api;
 "use strict";
 
-var trace = function trace(msg) {
-    return function (x) {
-        console.log(msg, x);
-        return x;
-    };
-};
-
 var compose = function compose(fn) {
     for (var _len = arguments.length, rest = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
         rest[_key - 1] = arguments[_key];
@@ -91,6 +77,13 @@ var curry = function curry(fn) {
 var map = function map(fn) {
     return function (elem) {
         return elem.map(fn);
+    };
+};
+
+var trace = function trace(msg) {
+    return function (x) {
+        console.log(msg, x);
+        return x;
     };
 };
 
